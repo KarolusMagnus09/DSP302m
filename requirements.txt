@@ -1,0 +1,10 @@
+# Cài torch/torchvision TRƯỚC theo GPU của bạn (Windows + NVIDIA: bản cu126), ví dụ:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+ultralytics==8.4.183
+opencv-python
+numpy
+scipy
+tqdm
+pandas
+gradio
+imageio-ffmpeg

@@ -1,0 +1,15 @@
+services:
+  agapp:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./weights:/app/weights:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
