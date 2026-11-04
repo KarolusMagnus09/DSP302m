@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # Cài torch trước. cu126 = GPU NVIDIA. Nếu chạy CPU thì đổi "cu126" thành "cpu"
-RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cu126
+RUN pip install --no-cache-dir --default-timeout=300 --retries 10 torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
